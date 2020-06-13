@@ -38,5 +38,5 @@ public interface CommonMapper {
 
     void userInfo(Map<String, String> userData);
 
-    //List<CommonVo> srhUserInfo(Map<String, String> userData);
+    List<CommonVo> srhUserInfo(Map<String, String> userData);
 }

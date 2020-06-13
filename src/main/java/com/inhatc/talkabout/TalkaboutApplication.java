@@ -139,12 +139,13 @@ public class TalkaboutApplication {
 		return analGraph;
 	}
 
-/*	//유저 정보 조회
+	//유저 정보 조회
 	@PostMapping("/api/srhUserInfo")
 	public Object srhUserInfo(@RequestBody Map<String, String> userData) throws NoSuchAlgorithmException {
+		System.out.println(userData);
 		List<CommonVo> srhUserInfo = commonService.srhUserInfo(userData);
 		return srhUserInfo;
-	}*/
+	}
 
 	//sha256 암호화
 	public static String sha256(String msg)  throws NoSuchAlgorithmException {

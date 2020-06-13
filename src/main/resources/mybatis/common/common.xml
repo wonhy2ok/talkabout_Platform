@@ -74,13 +74,13 @@
         limit 10;
     </select>
 
-<!--    <select id="srhUserInfo" parameterType="java.util.HashMap" resultType="CommonVo">
+    <select id="srhUserInfo" parameterType="java.util.HashMap" resultType="CommonVo">
         select user_id as userId
             , user_name as userName
             , nick as nick
-            , birth as birth
+            , date_format(birth, '%Y-%m-%d') as birth
             , contact as contact
         from tb_user
         where user_id = #{userId}
-    </select>-->
+    </select>
 </mapper>

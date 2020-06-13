@@ -67,7 +67,7 @@ public class CommonService {
         return mapper.analGraph();
     }
 
-    /*public List<CommonVo> srhUserInfo(Map<String, String> userData) {
+    public List<CommonVo> srhUserInfo(Map<String, String> userData) {
         return mapper.srhUserInfo(userData);
-    }*/
+    }
 }
