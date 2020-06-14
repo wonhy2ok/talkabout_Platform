@@ -39,4 +39,8 @@ public interface CommonMapper {
     void userInfo(Map<String, String> userData);
 
     List<CommonVo> srhUserInfo(Map<String, String> userData);
+
+    int udtUserInfo(Map<String, String> userData);
+
+    int UdtUserPass(Map<String, String> userData);
 }

@@ -74,6 +74,7 @@
         limit 10;
     </select>
 
+    <!-- 사용자 정보 조회 -->
     <select id="srhUserInfo" parameterType="java.util.HashMap" resultType="CommonVo">
         select user_id as userId
             , user_name as userName
@@ -83,4 +84,18 @@
         from tb_user
         where user_id = #{userId}
     </select>
+
+    <!-- 사용자 정보 수정 -->
+    <update id="udtUserInfo" parameterType="java.util.HashMap">
+        update tb_user
+        set birth = #{userBirth}
+            , contact = #{userContact}
+        where user_id = #{userEmail}
+    </update>
+    <!-- 사용자 정보 비밀번호 수정 -->
+    <update id="UdtUserPass" parameterType="java.util.HashMap">
+        update tb_user
+        set user_pw = #{userPass}
+        where user_id = #{userEmail}
+    </update>
 </mapper>

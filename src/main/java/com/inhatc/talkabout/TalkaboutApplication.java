@@ -142,9 +142,35 @@ public class TalkaboutApplication {
 	//유저 정보 조회
 	@PostMapping("/api/srhUserInfo")
 	public Object srhUserInfo(@RequestBody Map<String, String> userData) throws NoSuchAlgorithmException {
-		System.out.println(userData);
 		List<CommonVo> srhUserInfo = commonService.srhUserInfo(userData);
 		return srhUserInfo;
+	}
+
+	//유저 정보 수정
+	@PostMapping("/api/udtUserInfo")
+	public Object udtUserInfo(@RequestBody Map<String, String> userData) throws NoSuchAlgorithmException {
+/*		userData.put("isPass","false");
+		if(userData.get("userPass").length()>0){
+			userData.put("isPass","true");
+			userData.put("userPass",sha256(userData.get("userPass")).replaceAll(" ",""));
+		}
+		System.out.println(userData);*/
+		//사용자 정보 수정 쿼리
+		int resUdt = commonService.udtUserInfo(userData);
+		System.out.println(resUdt);
+		return resUdt;
+	}
+
+	//유저 비밀번호 수정
+	@PostMapping("/api/UdtUserPass")
+	public Object UdtUserPass(@RequestBody Map<String, String> userData) throws NoSuchAlgorithmException {
+
+		userData.put("userPass",sha256(userData.get("userPass")).replaceAll(" ",""));
+		System.out.println(userData);
+		//사용자 정보 수정 쿼리
+		int resUdt = commonService.UdtUserPass(userData);
+		System.out.println(resUdt);
+		return resUdt;
 	}
 
 	//sha256 암호화

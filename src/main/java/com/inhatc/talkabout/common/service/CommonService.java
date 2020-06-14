@@ -70,4 +70,12 @@ public class CommonService {
     public List<CommonVo> srhUserInfo(Map<String, String> userData) {
         return mapper.srhUserInfo(userData);
     }
+
+    public int udtUserInfo(Map<String, String> userData) {
+        return mapper.udtUserInfo(userData);
+    }
+
+    public int UdtUserPass(Map<String, String> userData) {
+        return mapper.UdtUserPass(userData);
+    }
 }
